@@ -11,6 +11,8 @@ $('button.attack').click(function(){
     var type = $(this).attr('data-option');
     var url = 'api/attack.php?role_id=' + role_id + '&type=' + type;
     $.get(url, function(data, status){
+        alert(data);
+        loader_blood_value(role_id);
         loader_killed_times(role_id);
     });
 });

@@ -16,7 +16,7 @@ $rand = mt_rand(70, 130);
 
 $delta_harm = ($config[$type . '_harm'] - $p_u + $p_v + $p_x + $p_y + $p_z) * $rand / 100;
 
-$delta_harm = intval($delta_harm);
+$delta_harm = $delta_harm <= 0 ? 0 : intval($delta_harm);
 
 echo $delta_harm;
 ?>
