@@ -18,7 +18,7 @@ $('button.attack').click(function(){
 });
 
 $('#neg-edu-btn').click(function(){
-    var content = prompt("Please enter your negative content:","");
+    var content = prompt("请输入邪恶留言:","");
     if (content) {
         var url = 'api/addBehavior.php';
         var data = {
@@ -29,13 +29,13 @@ $('#neg-edu-btn').click(function(){
         alert(data);
         $.post(url, data, function(){
             loader_behavior(role_id);
-            alert('successfully add a negative behavior!');
+            alert('成功养成一条邪恶行为!');
         });
     }
 });
 
 $('#pos-edu-btn').click(function(){
-    var content = prompt("Please enter your positive content:","");
+    var content = prompt("请输入正义留言:","");
     if (content) {
         var url = 'api/addBehavior.php';
         var data = {
@@ -45,7 +45,7 @@ $('#pos-edu-btn').click(function(){
         };
         $.post(url, data, function(){
             loader_behavior(role_id);
-            alert('successfully add a positive behavior!');
+            alert('成功养成一条正义行为!');
         });
     }
 });

@@ -3,7 +3,7 @@ return array(
     // 数据库配置项
     'db_host'   => '127.0.0.1',
     'db_user'   => 'root',
-    'db_passwd' => '33068080',
+    'db_passwd' => '',
     'db_port'   => '3306',
     'db_name'   => 'vivian',
 
