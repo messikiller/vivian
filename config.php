@@ -7,6 +7,9 @@ return array(
     'db_port'   => '3306',
     'db_name'   => 'vivian',
 
+    // 保护角色抵消伤害的概率
+    'escape_possibility' => '0.5',
+
     // 不同攻击方式对于的伤害基值
     'a_harm' => 1,
     'b_harm' => 1,

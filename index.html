@@ -22,10 +22,6 @@
                 <td><input type="text" id="role" disabled="true" value="vivian"></td>
             </tr>
             <tr>
-                <td>当前头衔:</td>
-                <td><input type="text" id="honor" disabled="true"></td>
-            </tr>
-            <tr>
                 <td>邪恶值:</td>
                 <td><input type="text" id="negative-value" disabled="true"></td>
             </tr>
@@ -42,13 +38,17 @@
                 <td><input type="text" id="killed-times" disabled="true"></td>
             </tr>
             <tr>
+                <td>可用保护次数:</td>
+                <td><input type="text" id="protect-times" disabled="true"></td>
+            </tr>
+            <tr>
                 <td>已经养成的行为:</td>
                 <td>
                     <textarea id="behavior" rows="8" cols="40" disabled="true"></textarea>
                 </td>
             </tr>
             <tr>
-                <td>调教e:</td>
+                <td>调教:</td>
                 <td>
                     <button type="button" id="neg-edu-btn">邪恶调教</button>
                     <button type="button" id="pos-edu-btn">正义调教</button>
@@ -61,6 +61,12 @@
                     <button type="button" class="attack" data-option="b">B</button>
                     <button type="button" class="attack" data-option="c">C</button>
                     <button type="button" class="attack" data-option="d">D</button>
+                </td>
+            </tr>
+            <tr>
+                <td>加强保护:</td>
+                <td>
+                    <button type="button" class="protect" data-option="a">增加保护次数</button>
                 </td>
             </tr>
         </table>

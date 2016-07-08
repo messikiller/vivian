@@ -1,12 +1,4 @@
-function loader_honor(role_id)
-{
-    var url = 'api/getHonor.php?role_id=' + role_id;
-    $.get(url, function(data, status){
-        $('#honor').val(data);
-    });
-}
-
-function loader_neagtive_value(role_id)
+function loader_negative_value(role_id)
 {
     var url = 'api/getNegPosVal.php?role_id=' + role_id + '&type=neg';
     $.get(url, function(data, status){
@@ -35,6 +27,14 @@ function loader_killed_times(role_id)
     var url = 'api/getKilledTimes.php?role_id=' + role_id;
     $.get(url, function(data, status){
         $('#killed-times').val(data);
+    });
+}
+
+function loader_protect_times(role_id)
+{
+    var url = 'api/getProtectTimes.php?role_id=' + role_id;
+    $.get(url, function(data, status){
+        $('#protect-times').val(data);
     });
 }
 
