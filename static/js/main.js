@@ -16,3 +16,36 @@ $('button.attack').click(function(){
         loader_killed_times(role_id);
     });
 });
+
+$('#neg-edu-btn').click(function(){
+    var content = prompt("Please enter your negative content:","");
+    if (content) {
+        var url = 'api/addBehavior.php';
+        var data = {
+            'role_id': role_id,
+            'type': 'neg',
+            'content': content
+        };
+        alert(data);
+        $.post(url, data, function(){
+            loader_behavior(role_id);
+            alert('successfully add a negative behavior!');
+        });
+    }
+});
+
+$('#pos-edu-btn').click(function(){
+    var content = prompt("Please enter your positive content:","");
+    if (content) {
+        var url = 'api/addBehavior.php';
+        var data = {
+            'role_id': role_id,
+            'type': 'pos',
+            'content': content
+        };
+        $.post(url, data, function(){
+            loader_behavior(role_id);
+            alert('successfully add a positive behavior!');
+        });
+    }
+});
