@@ -7,22 +7,12 @@ loader_killed_times(role_id);
 loader_protect_times(role_id);
 
 $('#neg-edu-btn').click(function(){
-    var content = prompt("请输入邪恶留言:","");
-    if (content) {
-        var url = 'api/addBehavior.php';
-        var data = {
-            'role_id': role_id,
-            'type': 'neg',
-            'content': content
-        };
-        $.post(url, data, function(){
-            alert('成功添加邪恶养成留言!');
-            loader_behavior(role_id);
-            loader_negative_value(role_id);
-        });
-    }
+    window.location.href="add_neg_msg.html";
 });
 
+$('#pos-edu-btn').click(function(){
+    window.location.href="add_pos_msg.html";
+});
 
 
 $('button.attack').click(function(){
