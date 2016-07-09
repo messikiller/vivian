@@ -24,9 +24,9 @@ $('button.attack').click(function(){
         if (json_obj.status == 'protected') {
             alert('保护被触发，剩余保护次数：'+json_obj.new_protect_times);
         } else if (json_obj.status == 'killed') {
-            alert('角色已经被杀死，累计杀死次数已经达到：'+json_obj.new_killed_times);
+            alert('本次攻击造成伤害：'+json_obj.delta_harm+'，角色已经被杀死，累计杀死次数已经达到：'+json_obj.new_killed_times);
         } else if (json_obj.status == 'harmed') {
-            alert('攻击完成，当前角色剩余血量：'+json_obj.new_blood_value);
+            alert('本次攻击造成伤害：'+json_obj.delta_harm+'，当前角色剩余血量：'+json_obj.new_blood_value);
         }
 
         loader_blood_value(role_id);

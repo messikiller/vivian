@@ -22,7 +22,8 @@ if ($is_protect && $c_protect_times > 0) {
 		'status' => 'protected',
 		'new_protect_times' => $new_protect_times,
 		'new_blood_value' => $c_blood_value,
-		'new_killed_times' => $c_killed_times
+		'new_killed_times' => $c_killed_times,
+		'delta_harm' => 0
 	);
 	echo json_encode($data);
 	exit();
@@ -51,7 +52,8 @@ if ($delta_harm >= $c_blood_value) {
 		'status' => 'killed',
 		'new_protect_times' => $c_protect_times,
 		'new_blood_value' => $new_blood_value,
-		'new_killed_times' => $new_killed_times
+		'new_killed_times' => $new_killed_times,
+		'delta_harm' => $delta_harm
 	);
 
 	echo json_encode($data);
@@ -68,7 +70,8 @@ if ($delta_harm >= $c_blood_value) {
 		'status' => 'harmed',
 		'new_protect_times' => $c_protect_times,
 		'new_blood_value' => $new_blood_value,
-		'new_killed_times' => $c_killed_times
+		'new_killed_times' => $c_killed_times,
+		'delta_harm' => $delta_harm
 	);
 
 	echo json_encode($data);
