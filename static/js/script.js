@@ -42,6 +42,24 @@ function loader_behavior(role_id)
 {
     var url = 'api/getBehavior.php?role_id=' + role_id;
     $.get(url, function(data, status){
-        $('#behavior').val(data);
+        var json_obj = eval("("+data+")");
+        var pos_str = '';
+        var neg_str = '';
+
+        for (var i in json_obj) {
+            json = json_obj[i];
+            if (json) {
+                if (parseInt(json.behavior_type) == 1) {
+                    pos_str += json.o_time + ':  ';
+                    pos_str += json.behavior + '\r\n';
+                } else if(parseInt(json.behavior_type) == 0) {
+                    neg_str += json.o_time + ':  ';
+                    neg_str += json.behavior + '\r\n';
+                }
+            }
+        }
+
+        $('#pos-message').val(pos_str);
+        $('#neg-message').val(neg_str);
     });
 }

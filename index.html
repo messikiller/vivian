@@ -42,12 +42,6 @@
                 <td><input type="text" id="protect-times" disabled="true"></td>
             </tr>
             <tr>
-                <td>已经养成的行为:</td>
-                <td>
-                    <textarea id="behavior" rows="8" cols="40" disabled="true"></textarea>
-                </td>
-            </tr>
-            <tr>
                 <td>调教:</td>
                 <td>
                     <button type="button" id="neg-edu-btn">邪恶调教</button>
@@ -69,9 +63,33 @@
                     <button type="button" class="protect" data-option="a">增加保护次数</button>
                 </td>
             </tr>
+            <tr>
+                <td>已经养成的行为:</td>
+                <!-- 在这里编辑已经养成的行为 -->
+                <td><textarea disabled="true" rows="10" cols="110" style="resize:none">
+
+                </textarea></td>
+            </tr>
+            <tr>
+                <td>用户养成留言:</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>正义调教留言</td>
+                            <td>邪恶调教留言</td>
+                        </tr>
+                        <tr>
+                            <td><textarea id="pos-message" rows="10" cols="50" disabled="true" style="resize:none"></textarea></td>
+                            <td><textarea id="neg-message" rows="10" cols="50" disabled="true" style="resize:none"></textarea></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
         </table>
     </div>
 </div>
+
+<div class="footer" style="height:50px">
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

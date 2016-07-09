@@ -17,7 +17,7 @@ $('#neg-edu-btn').click(function(){
             'content': content
         };
         $.post(url, data, function(){
-            alert('成功养成一条邪恶行为!');
+            alert('成功添加邪恶养成留言!');
             loader_behavior(role_id);
             loader_negative_value(role_id);
         });
@@ -34,7 +34,7 @@ $('#pos-edu-btn').click(function(){
             'content': content
         };
         $.post(url, data, function(){
-            alert('成功养成一条正义行为!');
+            alert('成功添加正义养成留言!');
             loader_behavior(role_id);
             loader_positive_value(role_id);
         });
@@ -57,6 +57,14 @@ $('button.attack').click(function(){
 
         loader_blood_value(role_id);
         loader_killed_times(role_id);
+        loader_protect_times(role_id);
+    });
+});
+
+$('button.protect').click(function(){
+    var url = 'api/protect.php?role_id=' + role_id;
+    $.get(url, function(data, status){
+        alert('成功添加一次保护，剩余可用的保护次数：'+data);
         loader_protect_times(role_id);
     });
 });
