@@ -1,7 +1,7 @@
 <?php
 $db = require_once('mysql.con.inc.php');
 $role_id = $_POST['role_id'];
-$type = $_POST['type'] == 'neg' ? 0 : 1;
+$type = $_POST['type'];
 $content = $_POST['content'];
 $time = time();
 

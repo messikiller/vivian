@@ -5,7 +5,6 @@ loader_negative_value(role_id);
 loader_positive_value(role_id);
 loader_killed_times(role_id);
 loader_protect_times(role_id);
-loader_behavior(role_id);
 
 $('#neg-edu-btn').click(function(){
     var content = prompt("请输入邪恶留言:","");
@@ -24,22 +23,7 @@ $('#neg-edu-btn').click(function(){
     }
 });
 
-$('#pos-edu-btn').click(function(){
-    var content = prompt("请输入正义留言:","");
-    if (content) {
-        var url = 'api/addBehavior.php';
-        var data = {
-            'role_id': role_id,
-            'type': 'pos',
-            'content': content
-        };
-        $.post(url, data, function(){
-            alert('成功添加正义养成留言!');
-            loader_behavior(role_id);
-            loader_positive_value(role_id);
-        });
-    }
-});
+
 
 $('button.attack').click(function(){
     var type = $(this).attr('data-option');

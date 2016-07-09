@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>vivian</title>
+        <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="static/css/main.css">
+    </head>
+<body>
+<input type="hidden" id="role_id" value="1">
+<table>
+	<tr>
+	    <td>正义调教留言</td>
+	    <td>邪恶调教留言</td>
+	</tr>
+	<tr>
+	    <td><textarea id="pos-message" rows="50" cols="50" disabled="true" style="resize:none"></textarea></td>
+	    <td><textarea id="neg-message" rows="50" cols="50" disabled="true" style="resize:none"></textarea></td>
+	</tr>
+	</table>
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/script.js"></script>
+<script type="text/javascript">
+var role_id = $('#role_id').val();
+var url = 'api/getBehavior.php?role_id=' + role_id;
+    $.get(url, function(data, status){
+        var json_obj = eval("("+data+")");
+        var pos_str = '';
+        var neg_str = '';
+
+        for (var i in json_obj) {
+            json = json_obj[i];
+            if (json) {
+                if (parseInt(json.behavior_type) == 1) {
+                    pos_str += json.o_time + ':  ';
+                    pos_str += json.behavior + '\r\n';
+                } else if(parseInt(json.behavior_type) == 0) {
+                    neg_str += json.o_time + ':  ';
+                    neg_str += json.behavior + '\r\n';
+                }
+            }
+        }
+
+        $('#pos-message').val(pos_str);
+        $('#neg-message').val(neg_str);
+    });
+</script>
+</body>
+</html>

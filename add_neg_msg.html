@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>vivian</title>
+        <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="static/css/main.css">
+    </head>
+<body>
+
+输入邪恶养成留言：<br />
+<textarea id="msg" name="msg" cols="30" rows="10"></textarea>
+<input type="hidden" name="role_id" id="role_id" value="1">
+<br />
+<button id="submit-btn">提交</button>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/script.js"></script>
+<script type="text/javascript">
+$('#submit-btn').click(function(){
+    var role_id = $('#role_id').val();
+    var content = $('#msg').val();
+    if (content) {
+        var url = 'api/addBehavior.php';
+        var data = {
+            'role_id': role_id,
+            'type': '0',
+            'content': content
+        };
+        $.post(url, data, function(){
+            alert('成功添加邪恶养成留言!');
+            window.location.href="index.html";
+        });
+    }
+});
+</script>
+</body>
+</html>
